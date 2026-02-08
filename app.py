@@ -129,6 +129,15 @@ def train_link_model():
 
     return model, vectorizer
 
+@st.cache_resource
+def load_models():
+    text_model, text_vectorizer = train_sms_model()
+    link_model, link_vectorizer = train_link_model()
+    return text_model, text_vectorizer, link_model, link_vectorizer
+
+text_model, text_vectorizer, link_model, link_vectorizer = load_models()
+
+
 # =====================
 # Load or Train Models
 # =====================
