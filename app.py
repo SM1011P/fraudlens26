@@ -68,6 +68,17 @@ TEXT_VECT_PATH = "models/sms_email_vectorizer.pkl"
 
 LINK_MODEL_PATH = "models/link_model.pkl"
 LINK_VECT_PATH = "models/link_vectorizer.pkl"
+BASE_DIR = os.path.dirname(__file__)
+DATASET_DIR = os.path.join(BASE_DIR, "datasets")
+
+SMS_DATA_PATH = os.path.join(DATASET_DIR, "merged_email_sms_spam_dataset.csv")
+URL_DATA_PATH = os.path.join(DATASET_DIR, "merged_url_dataset.csv")
+
+st.write("Current working dir:", os.getcwd())
+st.write("BASE_DIR:", BASE_DIR)
+st.write("Dataset dir exists:", os.path.exists(DATASET_DIR))
+st.write("Files:", os.listdir(DATASET_DIR))
+
 
 # =====================
 # Helper Functions
