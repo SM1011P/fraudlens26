@@ -101,7 +101,7 @@ def clean_url(url):
 # =====================
 def train_sms_model():
     st.info("Training SMS model for first time...")
-    df = pd.read_csv("datasets/merged_email_sms_spam_dataset.csv")
+    df = pd.read_csv(SMS_DATA_PATH)
 
     X = df['text'].apply(clean_text)
     y = df['label']
@@ -122,7 +122,7 @@ def train_sms_model():
 # =====================
 def train_link_model():
     st.info("Training Link model for first time...")
-    df = pd.read_csv("datasets/merged_url_dataset.csv")
+    df = pd.read_csv(URL_DATA_PATH)
     df = df[['url','type']]
     df['url'] = df['url'].apply(clean_url)
 
